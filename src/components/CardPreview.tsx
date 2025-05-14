@@ -1,5 +1,5 @@
 
-import { QrCode, Wallet, Bitcoin } from 'lucide-react';
+import { ScanLine, Wallet, Bitcoin } from 'lucide-react';
 
 const CardPreview = () => {
   return (
@@ -30,7 +30,7 @@ const CardPreview = () => {
             <div className="text-2xl font-bold text-white">$842.57</div>
           </div>
           <div className="bg-teal-500/20 rounded-lg p-2">
-            <QrCode className="w-8 h-8 text-teal-300" />
+            <ScanLine className="w-8 h-8 text-teal-300" />
           </div>
         </div>
       </div>

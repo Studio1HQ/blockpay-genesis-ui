@@ -1,5 +1,5 @@
 
-import { QrCode, Bitcoin, CreditCard, Wallet, Link, Check, Users } from 'lucide-react';
+import { ScanLine, Bitcoin, CreditCard, Wallet, Link, Check, Users } from 'lucide-react';
 
 const Feature = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
   <div className="feature-card animate-slide-up">
@@ -31,7 +31,7 @@ const FeatureSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Feature 
-            icon={<QrCode className="w-6 h-6 text-teal-400" />}
+            icon={<ScanLine className="w-6 h-6 text-teal-400" />}
             title="Quick QR Payments"
             description="Scan and pay instantly with secure QR codes for Bitcoin transactions at any merchant."
           />

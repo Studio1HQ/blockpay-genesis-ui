@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Download, Check } from 'lucide-react';
+import { Download, Check, Scan, Home, Users, Coffee, ShoppingBag } from 'lucide-react';
 
 const CTASection = () => {
   return (
@@ -50,7 +50,7 @@ const CTASection = () => {
                       <div className="bg-dark-teal-100 p-3 rounded-xl flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center">
-                            <CoffeeIcon className="w-5 h-5 text-teal-400" />
+                            <Coffee className="w-5 h-5 text-teal-400" />
                           </div>
                           <div>
                             <p className="text-white text-sm">Coffee Shop</p>
@@ -63,7 +63,7 @@ const CTASection = () => {
                       <div className="bg-dark-teal-100 p-3 rounded-xl flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center">
-                            <ShoppingBagIcon className="w-5 h-5 text-teal-400" />
+                            <ShoppingBag className="w-5 h-5 text-teal-400" />
                           </div>
                           <div>
                             <p className="text-white text-sm">Grocery Store</p>
@@ -79,21 +79,21 @@ const CTASection = () => {
                   <div className="bg-dark-teal-50 p-3 flex justify-around">
                     <div className="flex flex-col items-center">
                       <div className="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center">
-                        <HomeIcon className="w-3 h-3 text-teal-400" />
+                        <Home className="w-3 h-3 text-teal-400" />
                       </div>
                       <p className="text-xs text-white/60 mt-1">Home</p>
                     </div>
                     
                     <div className="flex flex-col items-center">
                       <div className="w-6 h-6 rounded-full bg-dark-teal-100 flex items-center justify-center">
-                        <QrCode className="w-3 h-3 text-white/60" />
+                        <Scan className="w-3 h-3 text-white/60" />
                       </div>
                       <p className="text-xs text-white/60 mt-1">Scan</p>
                     </div>
                     
                     <div className="flex flex-col items-center">
                       <div className="w-6 h-6 rounded-full bg-dark-teal-100 flex items-center justify-center">
-                        <UsersIcon className="w-3 h-3 text-white/60" />
+                        <Users className="w-3 h-3 text-white/60" />
                       </div>
                       <p className="text-xs text-white/60 mt-1">Profile</p>
                     </div>
@@ -147,40 +147,5 @@ const CTASection = () => {
     </section>
   );
 };
-
-// Simple icons for the phone UI
-const HomeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-    <path d="M9 22V12h6v10" />
-  </svg>
-);
-
-const CoffeeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M18 8h1a4 4 0 010 8h-1" />
-    <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
-    <line x1="6" y1="1" x2="6" y2="4" />
-    <line x1="10" y1="1" x2="10" y2="4" />
-    <line x1="14" y1="1" x2="14" y2="4" />
-  </svg>
-);
-
-const ShoppingBagIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-    <line x1="3" y1="6" x2="21" y2="6" />
-    <path d="M16 10a4 4 0 01-8 0" />
-  </svg>
-);
-
-const UsersIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-    <circle cx="9" cy="7" r="4" />
-    <path d="M23 21v-2a4 4 0 00-3-3.87" />
-    <path d="M16 3.13a4 4 0 010 7.75" />
-  </svg>
-);
 
 export default CTASection;
