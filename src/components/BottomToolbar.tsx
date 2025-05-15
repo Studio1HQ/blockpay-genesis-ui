@@ -1,7 +1,8 @@
 
 import React from "react";
-import { MessageCircle, Inbox, Eye, Upload, Menu } from "lucide-react";
+import { MessageCircle, Inbox, Upload, Menu, ToggleLeft } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Toggle } from "@/components/ui/toggle";
 
 const BottomToolbar = () => {
   return (
@@ -21,9 +22,9 @@ const BottomToolbar = () => {
         {/* Divider */}
         <div className="h-8 w-[1px] bg-gray-700/50"></div>
         
-        {/* Eye Icon */}
+        {/* Toggle Switch for Dark/Light Mode */}
         <button className="text-gray-300 hover:text-white transition-colors">
-          <Eye size={24} />
+          <ToggleLeft size={22} className="cursor-pointer" />
         </button>
         
         {/* Profile Section */}
