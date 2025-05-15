@@ -1,10 +1,12 @@
 
 import React from "react";
-import { MessageCircle, Inbox, Upload, Menu, ToggleLeft } from "lucide-react";
+import { MessageCircle, Inbox, Upload, Menu, ToggleLeft, ToggleRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Toggle } from "@/components/ui/toggle";
+import { useTheme } from "./ThemeProvider";
 
 const BottomToolbar = () => {
+  const { theme, toggleTheme } = useTheme();
+  
   return (
     <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center">
       <div className="glass-card rounded-full px-4 py-3 flex items-center gap-4 sm:gap-6 md:gap-8 teal-glow">
@@ -23,8 +25,16 @@ const BottomToolbar = () => {
         <div className="h-8 w-[1px] bg-gray-700/50"></div>
         
         {/* Toggle Switch for Dark/Light Mode */}
-        <button className="text-gray-300 hover:text-white transition-colors">
-          <ToggleLeft size={22} className="cursor-pointer" />
+        <button 
+          className="text-gray-300 hover:text-white transition-colors" 
+          onClick={toggleTheme}
+          aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {theme === "dark" ? (
+            <ToggleLeft size={24} className="cursor-pointer" />
+          ) : (
+            <ToggleRight size={24} className="cursor-pointer" />
+          )}
         </button>
         
         {/* Profile Section */}
