@@ -35,6 +35,44 @@
 
     --radius: 0.75rem;
   }
+  
+  .light-mode {
+    --background: 0 0% 100%;
+    --foreground: 180 10% 15%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 180 10% 15%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 180 10% 15%;
+
+    --primary: 175 84% 32%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 180 15% 94%;
+    --secondary-foreground: 180 10% 15%;
+
+    --muted: 180 15% 94%;
+    --muted-foreground: 180 5% 40%;
+
+    --accent: 175 84% 32%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 15% 85%;
+    --input: 180 15% 85%;
+    --ring: 180 85% 40%;
+  }
+
+  .light-mode .glass-card {
+    @apply bg-opacity-70 bg-white backdrop-filter backdrop-blur-lg border border-gray-200/70 shadow-lg;
+  }
+  
+  .light-mode .teal-glow {
+    @apply shadow-[0_0_15px_rgba(20,184,166,0.2)];
+  }
 }
 
 @layer base {
@@ -43,14 +81,14 @@
   }
 
   body {
-    @apply bg-dark-teal-900 text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-opacity-20 bg-gray-900 backdrop-filter backdrop-blur-lg border border-gray-700/30 shadow-xl;
+    @apply bg-opacity-20 bg-gray-900 backdrop-filter backdrop-blur-lg border border-gray-700/30 shadow-xl transition-colors duration-300;
   }
   
   .teal-glow {
@@ -64,8 +102,26 @@
   .feature-card {
     @apply rounded-2xl p-6 bg-dark-teal-50 border border-teal-900/30 transition-all duration-300 hover:border-teal-500/50 hover:shadow-lg hover:shadow-teal-900/20;
   }
+  
+  .light-mode .feature-card {
+    @apply bg-white border-teal-200/50 hover:shadow-teal-200/30;
+  }
 
   .feature-icon-bg {
     @apply flex items-center justify-center w-12 h-12 rounded-xl bg-teal-600/20 mb-4;
   }
+  
+  .light-mode .feature-icon-bg {
+    @apply bg-teal-50;
+  }
+}
+
+/* Light/Dark Mode Transitions */
+.transition-theme {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Light Mode Text Coloring */
+.light-mode .gradient-text {
+  @apply bg-gradient-to-r from-teal-800 to-teal-600 bg-clip-text text-transparent;
 }
