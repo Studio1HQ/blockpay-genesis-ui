@@ -8,11 +8,6 @@ export function VeltComponents() {
       
       {/* Enables comments functionality */}
       <VeltComments />
-      
-      {/* Comment tool button - positioned for better visibility */}
-      <div className="fixed bottom-24 right-6 z-40">
-        <VeltCommentTool />
-      </div>
     </>
   );
 } 
