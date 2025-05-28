@@ -1,8 +1,8 @@
-
 import React from "react";
-import { MessageCircle, Inbox, Upload, Menu, ToggleLeft, ToggleRight } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { MessageCircle, Inbox, Upload, Menu, ToggleLeft, ToggleRight, HelpCircle } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { UserSwitcher } from "./UserSwitcher";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const BottomToolbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -37,29 +37,30 @@ const BottomToolbar = () => {
           )}
         </button>
         
-        {/* Profile Section */}
-        <div className="flex items-center gap-2">
-          {/* First Avatar */}
-          <Avatar className="w-8 h-8 border-2 border-teal-600">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback className="bg-teal-900 text-teal-200">CN</AvatarFallback>
-          </Avatar>
-          
-          {/* Second Avatar */}
-          <Avatar className="w-8 h-8 border-2 border-teal-600">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback className="bg-teal-900 text-teal-200">JD</AvatarFallback>
-          </Avatar>
-          
-          {/* Third Avatar */}
-          <Avatar className="w-8 h-8 border-2 border-yellow-500">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback className="bg-teal-900 text-teal-200">MK</AvatarFallback>
-          </Avatar>
-        </div>
+        {/* Profile Section - Replaced with UserSwitcher */}
+        <UserSwitcher />
         
         {/* Divider */}
         <div className="h-8 w-[1px] bg-gray-700/50"></div>
+        
+        {/* Help Button with Tooltip */}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button className="text-gray-300 hover:text-white transition-colors">
+                <HelpCircle size={24} />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="top" className="max-w-[250px] p-4">
+              <h4 className="font-bold mb-2">Collaborative Features</h4>
+              <ul className="text-sm list-disc ml-4 space-y-1">
+                <li>Switch between Rick and Morty characters</li>
+                <li>See other users' cursors in real-time</li>
+                <li>Add comments anywhere on the page</li>
+              </ul>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         
         {/* Upload Icon */}
         <button className="text-gray-300 hover:text-white transition-colors">

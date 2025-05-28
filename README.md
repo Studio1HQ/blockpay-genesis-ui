@@ -71,3 +71,26 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Collaborative Features
+
+This project uses Velt to enable real-time collaboration features:
+
+1. **User Presence**: See who is currently viewing the landing page
+2. **Live Cursors**: See other users' cursor movements in real-time
+3. **Comments**: Add comments anywhere on the landing page
+
+### Setup
+
+1. Get a Velt API key from [Velt](https://velt.dev)
+2. Create a `.env` file in the root directory with:
+   ```
+   VITE_VELT_API_KEY=your_velt_api_key
+   ```
+3. Run the development server
+
+### Usage
+
+- Switch between two demo users using the avatar buttons in the bottom toolbar
+- See other users' cursors move in real-time
+- Add comments by clicking the comment button in the bottom right
