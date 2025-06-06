@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MessageCircle, Inbox, Upload, Menu, ToggleLeft, ToggleRight, HelpCircle } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
@@ -18,25 +19,25 @@ const BottomToolbar = () => {
         <div className="glass-card rounded-full px-4 py-3 flex items-center gap-4 sm:gap-6 md:gap-8 teal-glow">
           {/* Comment Tool - Using MessageCircle icon */}
           <VeltCommentTool>
-            <button className="text-gray-300 hover:text-white transition-colors">
+            <button className="text-muted-foreground hover:text-foreground transition-colors">
               <MessageCircle size={24} />
             </button>
           </VeltCommentTool>
           
           {/* Messages Icon - Wrapped with VeltSidebarButton */}
           <VeltSidebarButton>
-            <button className="text-gray-300 hover:text-white transition-colors relative">
+            <button className="text-muted-foreground hover:text-foreground transition-colors relative">
               <Inbox size={24} />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-teal-500 rounded-full"></span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full"></span>
             </button>
           </VeltSidebarButton>
           
           {/* Divider */}
-          <div className="h-8 w-[1px] bg-gray-700/50"></div>
+          <div className="h-8 w-[1px] bg-border"></div>
           
           {/* Toggle Switch for Dark/Light Mode */}
           <button 
-            className="text-gray-300 hover:text-white transition-colors" 
+            className="text-muted-foreground hover:text-foreground transition-colors" 
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
@@ -51,13 +52,13 @@ const BottomToolbar = () => {
           <UserSwitcher />
           
           {/* Divider */}
-          <div className="h-8 w-[1px] bg-gray-700/50"></div>
+          <div className="h-8 w-[1px] bg-border"></div>
           
           {/* Help Button with Tooltip */}
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button className="text-gray-300 hover:text-white transition-colors">
+                <button className="text-muted-foreground hover:text-foreground transition-colors">
                   <HelpCircle size={24} />
                 </button>
               </TooltipTrigger>
@@ -73,12 +74,12 @@ const BottomToolbar = () => {
           </TooltipProvider>
           
           {/* Upload Icon */}
-          <button className="text-gray-300 hover:text-white transition-colors">
+          <button className="text-muted-foreground hover:text-foreground transition-colors">
             <Upload size={24} />
           </button>
           
           {/* Menu Icon */}
-          <button className="text-gray-300 hover:text-white transition-colors">
+          <button className="text-muted-foreground hover:text-foreground transition-colors">
             <Menu size={24} />
           </button>
         </div>

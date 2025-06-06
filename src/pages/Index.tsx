@@ -8,7 +8,7 @@ import BottomToolbar from "@/components/BottomToolbar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-dark-teal-900 text-white overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-hidden transition-colors duration-300">
       <Navbar />
       <HeroSection />
       <FeatureSection />
