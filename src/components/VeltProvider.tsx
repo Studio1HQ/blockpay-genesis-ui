@@ -10,4 +10,4 @@ export function VeltProvider({ children }: { children: ReactNode }) {
       {children}
     </BaseVeltProvider>
   );
-} 
+}

@@ -1,8 +1,9 @@
-
 import { Button } from '@/components/ui/button';
 import { Download, Check, Scan, Home, Users, Coffee, ShoppingBag } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const CTASection = () => {
+  const { theme } = useTheme();
   return (
     <section id="how-it-works" className="py-20 relative">
       {/* Background gradient */}
@@ -133,10 +134,10 @@ const CTASection = () => {
               </ul>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white py-6 px-6 rounded-xl">
+                <Button className={`flex items-center gap-2 bg-teal-500 hover:bg-teal-600 py-6 px-6 rounded-xl ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
                   <Download className="w-5 h-5" /> Download for iOS
                 </Button>
-                <Button variant="outline" className="flex items-center gap-2 border-teal-700 hover:border-teal-500 bg-transparent hover:bg-dark-teal-50 text-white py-6 px-6 rounded-xl">
+                <Button variant="outline" className={`flex items-center gap-2 border-teal-700 hover:border-teal-500 bg-transparent hover:bg-dark-teal-50 py-6 px-6 rounded-xl ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
                   <Download className="w-5 h-5" /> Download for Android
                 </Button>
               </div>

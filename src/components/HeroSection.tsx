@@ -1,9 +1,10 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CardPreview from './CardPreview';
+import { useTheme } from '@/components/ThemeProvider';
 
 const HeroSection = () => {
+  const { theme } = useTheme();
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Background Elements */}
@@ -43,7 +44,7 @@ const HeroSection = () => {
               Get Started
             </Button>
             
-            <Button variant="outline" className="group border-teal-700 hover:border-teal-500 bg-transparent hover:bg-dark-teal-50 text-white flex items-center gap-2 px-6 py-6 rounded-full">
+            <Button variant="outline" className={`group border-teal-700 hover:border-teal-500 bg-transparent hover:bg-dark-teal-50 flex items-center gap-2 px-6 py-6 rounded-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
               Learn more
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
             </Button>
