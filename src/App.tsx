@@ -18,7 +18,6 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <VeltComponents />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
@@ -26,6 +25,8 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
+          {/* Move VeltComponents after router to ensure proper initialization */}
+          <VeltComponents />
         </TooltipProvider>
       </VeltProvider>
     </ThemeProvider>

@@ -15,7 +15,7 @@ const BottomToolbar = () => {
       <VeltComments darkMode={theme === "dark"} popoverTriangleComponent={false} />
       <VeltCommentsSidebar darkMode={theme === "dark"} />
       
-      <div className="fixed bottom-4 left-3 right-3 sm:bottom-6 sm:left-4 sm:right-4 md:left-6 md:right-6 z-50 flex justify-center">
+      <div className="fixed bottom-4 left-3 right-3 sm:bottom-6 sm:left-4 sm:right-4 md:left-6 md:right-6 z-40 flex justify-center">
         <div className="glass-card rounded-full px-3 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4 flex items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 teal-glow w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
           {/* Comment Tool - Using MessageCircle icon */}
           <VeltCommentTool>
