@@ -111,7 +111,11 @@
   }
 
   .feature-card {
-    @apply rounded-2xl p-6 bg-card border border-border transition-all duration-300 hover:border-primary/50 hover:shadow-lg;
+    @apply rounded-2xl p-6 bg-transparent border-0 transition-all duration-300 hover:bg-primary/5 hover:shadow-lg;
+  }
+  
+  .light .feature-card {
+    @apply bg-white/50 backdrop-blur-sm border border-gray-200/50 hover:bg-white/80 hover:border-primary/30;
   }
 
   .feature-icon-bg {

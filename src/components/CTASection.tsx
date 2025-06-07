@@ -109,32 +109,32 @@ const CTASection = () => {
                 Ready to <span className="gradient-text">experience</span> the future of payments?
               </h2>
               
-              <p className="text-gray-300 mb-8">
+              <p className={`mb-8 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                 Download BlockPay now and join thousands of users who are already enjoying secure, 
                 lightning-fast blockchain payments for their daily transactions.
               </p>
               
               <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2 text-gray-300">
+                <li className={`flex items-start gap-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                   <Check className="w-5 h-5 text-teal-400 mt-0.5" />
                   <span>Quick setup in under 2 minutes</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-300">
+                <li className={`flex items-start gap-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                   <Check className="w-5 h-5 text-teal-400 mt-0.5" />
                   <span>Secure multi-layer encryption</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-300">
+                <li className={`flex items-start gap-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                   <Check className="w-5 h-5 text-teal-400 mt-0.5" />
                   <span>Zero transaction fees for first 30 days</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-300">
+                <li className={`flex items-start gap-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                   <Check className="w-5 h-5 text-teal-400 mt-0.5" />
                   <span>24/7 customer support</span>
                 </li>
               </ul>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className={`flex items-center gap-2 bg-teal-500 hover:bg-teal-600 py-6 px-6 rounded-xl ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                <Button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white py-6 px-6 rounded-xl">
                   <Download className="w-5 h-5" /> Download for iOS
                 </Button>
                 <Button variant="outline" className={`flex items-center gap-2 border-teal-700 hover:border-teal-500 bg-transparent hover:bg-dark-teal-50 py-6 px-6 rounded-xl ${theme === 'dark' ? 'text-white' : 'text-black'}`}>

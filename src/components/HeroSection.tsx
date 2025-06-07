@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="absolute top-3/4 left-1/3 w-6 h-6 rounded-full border border-teal-500/30"></div>
       
       {/* Curved line SVG */}
-      <svg className="absolute top-20 right-0 h-[60%] w-[40%] text-teal-700/10" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`absolute top-20 right-0 h-[60%] w-[40%] ${theme === 'dark' ? 'text-teal-700/10' : 'text-teal-300/20'}`} viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
         <path 
           d="M0,50 C40,10 60,90 100,50 C140,10 160,90 200,50" 
           stroke="currentColor" 
@@ -26,14 +26,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column - Text */}
         <div className="order-2 md:order-1 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <p className="text-teal-400 font-medium tracking-widest mb-2">WELCOME</p>
+          <p className={`font-medium tracking-widest mb-2 ${theme === 'dark' ? 'text-teal-400' : 'text-teal-600'}`}>WELCOME</p>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="gradient-text">Blockchain</span> for <br />
             everyday payments
           </h1>
           
-          <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-lg">
+          <p className={`text-lg md:text-xl mb-8 max-w-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
             Revolutionizing digital transactions with secure blockchain technology.
             Scan, pay, and track in bitcoin with our UPI platform that combines
             simplicity and security.
