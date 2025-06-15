@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useMemo } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { VeltPresence } from '@veltdev/react';
@@ -93,10 +92,10 @@ export function UserSwitcher() {
       {/* VeltAuth component handles user identification */}
       <VeltAuth user={getCurrentUserWithUniqueId()} />
       
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4">
         {/* Active user indicator */}
-        <div className="flex items-center gap-1">
-          <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></div>
+        <div className="flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
         </div>
         
         {/* Presence component to show online users */}
@@ -105,8 +104,8 @@ export function UserSwitcher() {
         {/* User Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center gap-1.5 px-1.5 py-1 rounded-md bg-background/50 border border-border hover:bg-accent/50 transition-all duration-200 group">
-              <Avatar className="w-5 h-5 ring-1 ring-primary/30">
+            <button className="flex items-center gap-2 px-2 py-1 rounded-lg bg-background/50 border border-border hover:bg-accent/50 transition-all duration-200 group">
+              <Avatar className="w-6 h-6 ring-2 ring-primary/30">
                 <AvatarImage src={users[currentUser].photoUrl} alt={users[currentUser].name} />
                 <AvatarFallback className="bg-primary/20 text-primary text-xs">
                   {users[currentUser].name.split(' ').map(n => n[0]).join('')}
@@ -153,4 +152,4 @@ export function UserSwitcher() {
       </div>
     </>
   );
-}
+} 

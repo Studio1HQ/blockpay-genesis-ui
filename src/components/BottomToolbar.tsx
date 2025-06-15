@@ -16,35 +16,35 @@ const BottomToolbar = () => {
       <VeltCommentsSidebar darkMode={theme === "dark"} />
       
       <div className="fixed bottom-4 left-4 right-4 z-40 flex justify-center">
-        <div className="glass-card rounded-full px-3 py-2 flex items-center justify-between gap-1 teal-glow w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl sm:gap-2 md:gap-3 lg:gap-4 sm:justify-center">
+        <div className="glass-card rounded-full px-4 py-3 flex items-center justify-between gap-2 teal-glow w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl sm:gap-3 md:gap-4 lg:gap-6 sm:justify-center">
           {/* Comment Tool - Using MessageCircle icon */}
           <VeltCommentTool>
-            <button className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent/20 flex-shrink-0">
-              <MessageCircle size={16} className="sm:w-4 sm:h-4" />
+            <button className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
+              <MessageCircle size={20} className="sm:w-5 sm:h-5" />
             </button>
           </VeltCommentTool>
           
           {/* Messages Icon - Wrapped with VeltSidebarButton */}
           <VeltSidebarButton>
-            <button className="text-muted-foreground hover:text-foreground transition-colors relative p-1.5 rounded-md hover:bg-accent/20 flex-shrink-0">
-              <Inbox size={16} className="sm:w-4 sm:h-4" />
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-primary rounded-full"></span>
+            <button className="text-muted-foreground hover:text-foreground transition-colors relative p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
+              <Inbox size={20} className="sm:w-5 sm:h-5" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full"></span>
             </button>
           </VeltSidebarButton>
           
           {/* Divider - Hidden on very small screens */}
-          <div className="hidden sm:block h-4 w-[1px] bg-border/50 flex-shrink-0"></div>
+          <div className="hidden sm:block h-6 w-[1px] bg-border/50 flex-shrink-0"></div>
           
           {/* Toggle Switch for Dark/Light Mode */}
           <button 
-            className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent/20 flex-shrink-0" 
+            className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0" 
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
             {theme === "dark" ? (
-              <ToggleLeft size={16} className="sm:w-4 sm:h-4 cursor-pointer" />
+              <ToggleLeft size={20} className="sm:w-5 sm:h-5 cursor-pointer" />
             ) : (
-              <ToggleRight size={16} className="sm:w-4 sm:h-4 cursor-pointer" />
+              <ToggleRight size={20} className="sm:w-5 sm:h-5 cursor-pointer" />
             )}
           </button>
           
@@ -54,15 +54,15 @@ const BottomToolbar = () => {
           </div>
           
           {/* Divider - Hidden on small screens */}
-          <div className="hidden md:block h-4 w-[1px] bg-border/50 flex-shrink-0"></div>
+          <div className="hidden md:block h-6 w-[1px] bg-border/50 flex-shrink-0"></div>
           
           {/* Help Button with Tooltip - Hidden on very small screens */}
           <div className="hidden md:block flex-shrink-0">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent/20">
-                    <HelpCircle size={16} className="sm:w-4 sm:h-4" />
+                  <button className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20">
+                    <HelpCircle size={20} className="sm:w-5 sm:h-5" />
                   </button>
                 </TooltipTrigger>
                 <TooltipContent side="top" className="max-w-[250px] p-4">
@@ -78,13 +78,13 @@ const BottomToolbar = () => {
           </div>
           
           {/* Upload Icon - Hidden on very small screens */}
-          <button className="hidden sm:block text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent/20 flex-shrink-0">
-            <Upload size={16} className="sm:w-4 sm:h-4" />
+          <button className="hidden sm:block text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
+            <Upload size={20} className="sm:w-5 sm:h-5" />
           </button>
           
           {/* Menu Icon */}
-          <button className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-md hover:bg-accent/20 flex-shrink-0">
-            <Menu size={16} className="sm:w-4 sm:h-4" />
+          <button className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
+            <Menu size={20} className="sm:w-5 sm:h-5" />
           </button>
         </div>
       </div>
