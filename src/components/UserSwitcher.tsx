@@ -92,14 +92,16 @@ export function UserSwitcher() {
       {/* VeltAuth component handles user identification */}
       <VeltAuth user={getCurrentUserWithUniqueId()} />
       
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 max-w-[200px]">
         {/* Active user indicator */}
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
         </div>
         
         {/* Presence component to show online users */}
-        <VeltPresence />
+        <div className="flex-shrink-0 max-w-[80px] overflow-hidden">
+          <VeltPresence />
+        </div>
         
         {/* User Dropdown */}
         <DropdownMenu>
