@@ -16,7 +16,7 @@ const BottomToolbar = () => {
       <VeltCommentsSidebar darkMode={theme === "dark"} />
       
       <div className="fixed bottom-4 left-4 right-4 z-40 flex justify-center">
-        <div className="glass-card rounded-full px-4 py-3 flex items-center justify-between gap-2 teal-glow w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-lg sm:gap-3 md:gap-3 lg:gap-3 sm:justify-center">
+        <div className="glass-card rounded-full px-4 py-3 flex items-center gap-2 teal-glow min-w-fit max-w-[90vw] sm:gap-3 md:gap-3 lg:gap-3">
           {/* Comment Tool - Using MessageCircle icon */}
           <VeltCommentTool>
             <button className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
@@ -49,15 +49,15 @@ const BottomToolbar = () => {
           </button>
           
           {/* Profile Section - Replaced with UserSwitcher */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 min-w-0">
             <UserSwitcher />
           </div>
           
           {/* Divider - Hidden on small screens */}
           <div className="hidden md:block h-6 w-[1px] bg-border/50 flex-shrink-0"></div>
           
-          {/* Help Button with Tooltip - Hidden on very small screens */}
-          <div className="hidden md:block flex-shrink-0">
+          {/* Help Button with Tooltip - Hidden on small screens when toolbar gets crowded */}
+          <div className="hidden lg:block flex-shrink-0">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -77,8 +77,8 @@ const BottomToolbar = () => {
             </TooltipProvider>
           </div>
           
-          {/* Upload Icon - Hidden on very small screens */}
-          <button className="hidden sm:block text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
+          {/* Upload Icon - Hidden on smaller screens when toolbar gets crowded */}
+          <button className="hidden md:block text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-accent/20 flex-shrink-0">
             <Upload size={20} className="sm:w-5 sm:h-5" />
           </button>
           

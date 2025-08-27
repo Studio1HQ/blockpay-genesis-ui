@@ -82,14 +82,14 @@ export function UserSwitcher() {
       {/* VeltAuth component handles user identification */}
       <VeltAuth user={currentUserWithId} />
       
-      <div className="flex items-center gap-2 max-w-[200px]">
+      <div className="flex items-center gap-2">
         {/* Active user indicator */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
         </div>
         
-        {/* Presence component to show online users */}
-        <div className="flex-shrink-0 max-w-[80px] overflow-hidden">
+        {/* Presence component to show online users - flexible width */}
+        <div className="flex-shrink-0">
           <VeltPresence />
         </div>
         
@@ -97,16 +97,16 @@ export function UserSwitcher() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button className="flex items-center gap-2 px-2 py-1 rounded-lg bg-background/50 border border-border hover:bg-accent/50 transition-all duration-200 group">
-              <Avatar className="w-6 h-6 ring-2 ring-primary/30">
+              <Avatar className="w-6 h-6 ring-2 ring-primary/30 flex-shrink-0">
                 <AvatarImage src={users[currentUser].photoUrl} alt={users[currentUser].name} />
                 <AvatarFallback className="bg-primary/20 text-primary text-xs">
                   {users[currentUser].name.split(' ').map(n => n[0]).join('')}
                 </AvatarFallback>
               </Avatar>
-              <span className="text-xs font-medium text-foreground hidden sm:inline">
+              <span className="text-xs font-medium text-foreground hidden sm:inline whitespace-nowrap">
                 {users[currentUser].name}
               </span>
-              <ChevronDown className="w-3 h-3 text-muted-foreground group-hover:text-foreground transition-colors" />
+              <ChevronDown className="w-3 h-3 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent 
