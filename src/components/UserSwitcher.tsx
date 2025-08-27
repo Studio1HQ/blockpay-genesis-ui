@@ -67,13 +67,14 @@ export function UserSwitcher() {
     return id;
   }, []);
 
-  const getCurrentUserWithUniqueId = () => {
+  // Memoize the user object to prevent unnecessary re-renders
+  const currentUserWithId = useMemo(() => {
     const userWithId = {
       ...users[currentUser],
       userId: `${users[currentUser].userId}-${tabId}`
     };
     return userWithId;
-  };
+  }, [currentUser, tabId]);
 
   const handleUserSwitch = (index: number) => {
     if (index !== currentUser) {
@@ -84,13 +85,13 @@ export function UserSwitcher() {
 
   // Log current user changes
   useEffect(() => {
-    console.log('Current user changed to:', users[currentUser].name, 'with unique ID:', getCurrentUserWithUniqueId().userId);
-  }, [currentUser]);
+    console.log('Current user changed to:', users[currentUser].name, 'with unique ID:', currentUserWithId.userId);
+  }, [currentUser, currentUserWithId.userId]);
 
   return (
     <>
       {/* VeltAuth component handles user identification */}
-      <VeltAuth user={getCurrentUserWithUniqueId()} />
+      <VeltAuth user={currentUserWithId} />
       
       <div className="flex items-center gap-2 max-w-[200px]">
         {/* Active user indicator */}

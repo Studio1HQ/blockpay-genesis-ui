@@ -1,4 +1,4 @@
-import { VeltCursor, VeltComments, VeltCommentTool } from '@veltdev/react';
+import { VeltCursor } from '@veltdev/react';
 
 export function VeltComponents() {
   return (
@@ -32,9 +32,6 @@ export function VeltComponents() {
           }
         `
       }} />
-      
-      {/* Enables comments functionality */}
-      <VeltComments />
     </>
   );
 } 
