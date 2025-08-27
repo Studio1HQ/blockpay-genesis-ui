@@ -15,40 +15,40 @@ import { ChevronDown, Check } from 'lucide-react';
 // Define our Rick and Morty characters
 const users = [
   {
-    userId: 'rick-sanchez',
+    userId: 'rick-sanchez-unique',
     name: 'Rick Sanchez',
     email: 'rick@citadel.universe',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     color: '#55CC44',
     textColor: '#ffffff',
-    organizationId: 'blockpay-org'
+    organizationId: 'blockpay-test-org'
   },
   {
-    userId: 'morty-smith',
+    userId: 'morty-smith-unique',
     name: 'Morty Smith',
     email: 'morty@earth.c137',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
     color: '#FFCC00',
     textColor: '#000000',
-    organizationId: 'blockpay-org'
+    organizationId: 'blockpay-test-org'
   },
   {
-    userId: 'summer-smith',
+    userId: 'summer-smith-unique',
     name: 'Summer Smith',
     email: 'summer@earth.c137',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
     color: '#FF6B8B',
     textColor: '#ffffff',
-    organizationId: 'blockpay-org'
+    organizationId: 'blockpay-test-org'
   },
   {
-    userId: 'beth-smith',
+    userId: 'beth-smith-unique',
     name: 'Beth Smith',
     email: 'beth@earth.c137',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
     color: '#4A90E2',
     textColor: '#ffffff',
-    organizationId: 'blockpay-org'
+    organizationId: 'blockpay-test-org'
   }
 ];
 
@@ -60,21 +60,10 @@ export function UserSwitcher() {
     return randomIndex;
   });
 
-  // Generate a unique tab ID that persists for this browser tab session
-  const tabId = useMemo(() => {
-    const id = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
-    console.log('Generated tab ID:', id);
-    return id;
-  }, []);
-
   // Memoize the user object to prevent unnecessary re-renders
   const currentUserWithId = useMemo(() => {
-    const userWithId = {
-      ...users[currentUser],
-      userId: `${users[currentUser].userId}-${tabId}`
-    };
-    return userWithId;
-  }, [currentUser, tabId]);
+    return users[currentUser];
+  }, [currentUser]);
 
   const handleUserSwitch = (index: number) => {
     if (index !== currentUser) {
@@ -85,7 +74,7 @@ export function UserSwitcher() {
 
   // Log current user changes
   useEffect(() => {
-    console.log('Current user changed to:', users[currentUser].name, 'with unique ID:', currentUserWithId.userId);
+    console.log('Current user changed to:', users[currentUser].name, 'with ID:', currentUserWithId.userId);
   }, [currentUser, currentUserWithId.userId]);
 
   return (
