@@ -12,43 +12,25 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { ChevronDown, Check } from 'lucide-react';
 
-// Define our Rick and Morty characters
+// Define our users
 const users = [
   {
-    userId: 'rick-sanchez-unique',
+    userId: 'user-alpha-rick-2025',
     name: 'Rick Sanchez',
-    email: 'rick@citadel.universe',
+    email: 'rick.sanchez@blockpay.genesis',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     color: '#55CC44',
     textColor: '#ffffff',
-    organizationId: 'blockpay-test-org'
+    organizationId: 'blockpay-genesis-org'
   },
   {
-    userId: 'morty-smith-unique',
+    userId: 'user-beta-morty-2025',
     name: 'Morty Smith',
-    email: 'morty@earth.c137',
+    email: 'morty.smith@blockpay.genesis',
     photoUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-    color: '#FFCC00',
-    textColor: '#000000',
-    organizationId: 'blockpay-test-org'
-  },
-  {
-    userId: 'summer-smith-unique',
-    name: 'Summer Smith',
-    email: 'summer@earth.c137',
-    photoUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-    color: '#FF6B8B',
-    textColor: '#ffffff',
-    organizationId: 'blockpay-test-org'
-  },
-  {
-    userId: 'beth-smith-unique',
-    name: 'Beth Smith',
-    email: 'beth@earth.c137',
-    photoUrl: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
     color: '#4A90E2',
     textColor: '#ffffff',
-    organizationId: 'blockpay-test-org'
+    organizationId: 'blockpay-genesis-org'
   }
 ];
 

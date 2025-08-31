@@ -25,8 +25,8 @@ export function VeltAuth({ user }: VeltAuthProps) {
       try {
         // Always set the document first, as required by Velt
         console.log('Setting document ID...');
-        client.setDocument('blockpay-test-v3', { 
-          documentName: 'BlockPay Test v3' 
+        client.setDocument('blockpay-genesis-rick-and-morty-2025', { 
+          documentName: 'BlockPay Genesis 2025' 
         });
 
         // Check if this is a user switch (different userId than before)

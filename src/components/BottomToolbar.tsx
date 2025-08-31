@@ -68,7 +68,7 @@ const BottomToolbar = () => {
                 <TooltipContent side="top" className="max-w-[250px] p-4">
                   <h4 className="font-bold mb-2">Collaborative Features</h4>
                   <ul className="text-sm list-disc ml-4 space-y-1">
-                    <li>Switch between Rick and Morty characters</li>
+                    <li>Switch between Alex and Jordan</li>
                     <li>See other users' cursors in real-time</li>
                     <li>Add comments anywhere on the page</li>
                   </ul>
